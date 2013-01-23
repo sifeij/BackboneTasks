@@ -1,4 +1,4 @@
 Backbone Tasks
 ==================
 
-![Imgur](http://i.imgur.com/i6eCwxs.png)
+![Imgur](http://i.imgur.com/hLSIyvu.png)
