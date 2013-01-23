@@ -21,6 +21,7 @@
 
 		render: function() {
 			this.collection.each(this.addOne, this);
+			return this;
 		},
 
 		addOne: function(task) {				
@@ -35,6 +36,16 @@
 
 	App.Views.Task = Backbone.View.extend({
 		tagName: 'li',
+
+		events: {
+			//$('li').on('click', fn) //used to do this
+
+			'click': 'showAlert'
+		},
+
+		showAlert: function(){
+			alert('you clicked me!');
+		},
 
 		render: function() {
 			this.$el.html( this.model.get('title'));
@@ -58,9 +69,9 @@
 	]);
 
 	var tasksView = new App.Views.Tasks({ collection: tasksCollection });
-	tasksView.render();
-	
+		
 	//console.log(taskView.el);
-	$(document.body).html(tasksView.el);
+	//$(document.body).html(tasksView.el);
+	$('.tasks').html(tasksView.render().el);
 
 })();
